@@ -1,0 +1,17 @@
+services:
+  mysql:
+    container_name: 'tp3DDDsqlcontainer'
+    image: 'mysql:latest'
+    environment:
+      - 'MYSQL_DATABASE=tp3eventdatabase'
+      - 'MYSQL_PASSWORD=Numsey@Password!'
+      - 'MYSQL_ROOT_PASSWORD=Numsey@Password!!'
+      - 'MYSQL_USER=myuser'
+    ports:
+      - '3315:3306'
+  axioniq:
+    container_name: 'axioniqserver'
+    image: 'axoniq/axonserver:2024.1.2-jdk-17-nonroot'
+    ports:
+      - 8024:8024
+      - 8124:8124
